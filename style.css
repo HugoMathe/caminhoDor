@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  font-family: "Roboto";
+  height: 100vh;
+  background-color: #2e2e33;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+h1 {
+  font-weight: 300;
+  color: #16a085;
+  margin-top: 0;
+}
+
+strong {
+  font-weight: 900;
+  color: #1abc9c;
+}
+
+#master {
+  width: 100%;
+  height: 88vh;
+  border-bottom-left-radius: 8vh;
+  border-bottom-right-radius: 8vh;
+  background-color: #000000;
+}
+
+.material-icons.icons {
+  font-size: 5vh;
+  color: #95a5a6;
+}
+
+.material-icons.icons_selected {
+  font-size: 5vh;
+  color: #006eff;
+}
+
+#title {
+  font-size: 3vh;
+  margin-top: 0;
+}
+
+#content {
+  width: 90%;
+  padding-top: 5vh;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#navbar {
+  user-select: none;
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 12vh;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.overlay {
+  display: block;
+  background-color: #000000;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  width: 7vh;
+  top: 11.5vh;
+  left: 3vh;
+  height: 3vh;
+  position: absolute;
+  z-index: 2;
+}
+
+#caminho {
+  transition: transform 2.5s, filter 1.5s ease-in-out;
+  filter: brightness(150%);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes bkg_escuro {
+  from {
+    background-color: #2e2e33;
+  }
+
+  to {
+    background-color: #000000;
+  }
+}
+
+@keyframes bkg_voltar {
+  from {
+    background-color: #000000;
+  }
+
+  to {
+    background-color: #2e2e33;
+  }
+}
