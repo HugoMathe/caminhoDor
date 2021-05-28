@@ -75,15 +75,15 @@ img {
 
 .overlay {
   display: block;
-  background-color: #000000;
+  background-color: black;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 1;
   width: 7vh;
-  top: 11.5vh;
-  left: 3vh;
+  top: 9.2vh;
+  left: 0.5vh;
   height: 3vh;
-  position: absolute;
+  position: relative;
   z-index: 2;
 }
 
