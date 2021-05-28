@@ -91,24 +91,32 @@ img {
   filter: brightness(150%);
 }
 
-#acerto_alert{
+#acerto_alert {
+  opacity: 0;
   align-self: flex-end;
-  position: absolute;  
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 9;
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 0.5vh solid #01EA77;
+  border: 0.5vh solid #01ea77;
   border-radius: 1vh;
   background-color: #000000;
   width: max-content;
-  padding: 0.5vh 0.5vh;
+  padding: 1vh 1vh;
   height: 4vh;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
-.material-icons.acerto, #acerto_alert > p{
+.material-icons.acerto,
+#acerto_alert > p {
   color: white;
   padding: 0 0.5vh;
+  font-size: 2.5vh;
 }
 
 @keyframes aparecer {
@@ -138,5 +146,23 @@ img {
 
   to {
     background-color: #2e2e33;
+  }
+}
+
+@keyframes acerto{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes acerto_sumir{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
   }
 }
