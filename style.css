@@ -66,8 +66,8 @@ img {
 }
 
 #container {
-  width: max-content;
   height: 90%;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -90,6 +90,26 @@ img {
 #caminho {
   transition: transform 2.5s, filter 1.5s ease-in-out;
   filter: brightness(150%);
+}
+
+#acerto_alert{
+  align-self: flex-end;
+  position: fixed;  
+  z-index: 9;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 0.5vh solid #01EA77;
+  border-radius: 1vh;
+  background-color: #000000;
+  width: max-content;
+  padding: 0.5vh 0.5vh;
+  height: 4vh;
+}
+
+.material-icons.acerto, #acerto_alert > p{
+  color: white;
+  padding: 0 0.5vh;
 }
 
 @keyframes aparecer {
