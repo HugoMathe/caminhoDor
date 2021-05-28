@@ -112,6 +112,19 @@ img {
   animation-fill-mode: forwards;
 }
 
+#overlay {
+  display: none;
+  position: absolute;
+  z-index: 999999;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  background-color: #fe0000;
+}
+
 .material-icons.acerto,
 #acerto_alert > p {
   color: white;
@@ -149,20 +162,29 @@ img {
   }
 }
 
-@keyframes acerto{
-  from{
+@keyframes acerto {
+  from {
     opacity: 0;
   }
-  to{
+  to {
     opacity: 1;
   }
 }
 
-@keyframes acerto_sumir{
-  from{
+@keyframes acerto_sumir {
+  from {
     opacity: 1;
   }
-  to{
+  to {
     opacity: 0;
+  }
+}
+
+@keyframes erro_aparece {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }

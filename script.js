@@ -18,6 +18,8 @@ const some_overlay = () => {
     document.getElementById("caminho").style.transform = "scale(3)";
     document.getElementById("caminho").style.zIndex = 6;
     document.getElementById("acerto_alert").style.animationName = "acerto";    
+    document.getElementById("overlay").style.animationName = "erro_aparece"
+    document.getElementById("overlay").style.display = "inherit"
     cerebro.style.zIndex = 5;
 
     setTimeout(() => {
