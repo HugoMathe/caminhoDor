@@ -9,7 +9,7 @@ const some_overlay = () => {
   setTimeout(() => {
     document.getElementById("caminho").style.transformOrigin = ((Math.trunc(cerebro.getBoundingClientRect().left) - 10) + 'px') + ' ' + (Math.trunc(cerebro.getBoundingClientRect().top) + 'px')
     document.getElementById("caminho").style.transform = "scale(3)";
-    document.getElementById("caminho").style.zIndex = 3;
+    document.getElementById("caminho").style.zIndex = 6;
     cerebro.style.zIndex = 5;
 
     setTimeout(() => {
