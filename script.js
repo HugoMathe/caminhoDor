@@ -1,6 +1,7 @@
 let correto = new Audio("src/correto.ogg");
+let errado = new Audio("src/errado.ogg");
 
-const some_overlay = () => {
+const acerto = () => {
   let cerebro = document.getElementById("cerebro");
   cerebro.style.animationName = "aparecer";
 
@@ -18,8 +19,6 @@ const some_overlay = () => {
     document.getElementById("caminho").style.transform = "scale(3)";
     document.getElementById("caminho").style.zIndex = 6;
     document.getElementById("acerto_alert").style.animationName = "acerto";    
-    document.getElementById("overlay").style.animationName = "erro_aparece"
-    document.getElementById("overlay").style.display = "inherit"
     cerebro.style.zIndex = 5;
 
     setTimeout(() => {
@@ -30,6 +29,7 @@ const some_overlay = () => {
       document.getElementById("caminho").style.transform = "scale(1)";
       document.getElementById("acerto_alert").style.animationName =
         "acerto_sumir";
+      document.getElementById("overlay").style.animationName = "acerto_sumir"
     }, 5000);
 
     setTimeout(() => {
@@ -37,3 +37,15 @@ const some_overlay = () => {
     }, 7000);
   }, 2000);
 };
+
+const erro = () => {
+  errado.play();
+  document.getElementById("overlay").style.animationName = "acerto"
+  document.getElementById("overlay").style.display = "inherit"
+  setTimeout(() => {
+    document.getElementById("overlay").style.animationName = "acerto_sumir"
+  },200)
+  setTimeout(() => {
+    document.getElementById("overlay").style.display = "none"
+  },600)
+}

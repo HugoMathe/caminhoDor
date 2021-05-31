@@ -1,10 +1,15 @@
+html{
+  overflow-y: hidden;
+}
+
 body {
   margin: 0;
   font-family: "Roboto";
   height: 100vh;
   background-color: #2e2e33;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards;  
+  overflow-y: hidden;
 }
 
 h1 {
@@ -20,10 +25,12 @@ strong {
 
 #master {
   width: 100%;
-  height: 88vh;
+  height: 88%;
+  position: fixed;
   border-bottom-left-radius: 8vh;
   border-bottom-right-radius: 8vh;
   background-color: #000000;
+  overflow-y: hidden;
 }
 
 .material-icons.icons {
@@ -45,31 +52,33 @@ strong {
   display: flex;
   width: 90%;
   justify-content: center;
-  height: 90%;
-  padding-top: 5vh;
-  margin: auto;
-}
-
-img {
-  width: 100%;
   height: 100%;
+  margin: auto;
+  padding: 0;
 }
 
 #navbar {
   user-select: none;
   display: flex;
   position: fixed;
+  bottom: 0;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 12vh;
+  height: 12%;
 }
 
 #container {
-  height: 90%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+}
+
+#container img {
+  width: 100%;
+  height: 88%;
+  object-fit: contain;
+  overflow: hidden;
 }
 
 .overlay {
@@ -120,8 +129,7 @@ img {
   height: 100%;
   width: 100%;
   animation-fill-mode: both;
-  animation-duration: 1s;
-  animation-delay: 1s;
+  animation-duration: 0.2s;
   background-color: #fe0000;
 }
 
@@ -177,14 +185,5 @@ img {
   }
   to {
     opacity: 0;
-  }
-}
-
-@keyframes erro_aparece {
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
   }
 }
