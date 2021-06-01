@@ -2,7 +2,7 @@ let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
 const acerto = () => {
-  let cerebro = document.getElementById("cerebro");
+  let cerebro = document.getElementById("mao_direita");
   cerebro.style.animationName = "aparecer";
 
   setTimeout(() => {

@@ -71,6 +71,7 @@ strong {
 #container {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 5vh;
   flex-direction: row;
   transition: transform 2.5s, filter 1.5s ease-in-out;
   filter: brightness(150%);
@@ -85,29 +86,26 @@ strong {
 
 .overlay {
   display: block;
-  background-color: pink;
+  background-color: chartreuse;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 1;
   width: 7vh;
   height: 3vh;
-  position: relative;
+  position: absolute;
   z-index: 2;
 }
 
-#cerebro{
-  top: 13vh;
-  left:2.2vh;
+#mao_direita{
+  top: 67vw;
+  width: 12vh;
+  left:3.6vw;
 }
 
 #esquerdo{
-  top: 13.5vh;
-  left:27vh;
-  width: 8.1vh;
-}
-
-#caminho {
-
+  top: 20vw;
+  left:58vw;
+  width: 8vh;
 }
 
 #acerto_alert {
