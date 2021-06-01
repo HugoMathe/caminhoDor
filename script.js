@@ -53,7 +53,7 @@ const erro = () => {
   document.getElementById("acerto_alert").innerHTML =
     "<span class='material-icons acerto'> highlight_off </span>";
   document.getElementById("acerto_alert").innerHTML +=
-    "<p>Você errou cérebro!</p>";
+    "<p>Você errou mão direita!</p>";
   document.getElementById("acerto_alert").style.animationDuration = "1.5s";
   document.getElementById("acerto_alert").style.animationName = "acerto";
 

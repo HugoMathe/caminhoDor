@@ -86,7 +86,7 @@ strong {
 
 .overlay {
   display: block;
-  background-color: chartreuse;
+  background-color: fuchsia;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 1;
@@ -107,6 +107,83 @@ strong {
   left:58vw;
   width: 8vh;
 }
+
+#via_desc{
+  top: 39vw;
+  left:28vw;
+  width: 10.2vh;
+}
+
+#via_asc{
+  top: 41vw;
+  height: 2vh;
+  left:54.6vw;
+  width: 12.5vh;
+}
+
+#tronco_cerebral{
+  top: 52vw;
+  height: 3vh;
+  left:63vw;
+  width: 6vh;
+}
+
+#neuronio_terc{
+  top: 32.2vw;
+  height: 3vh;
+  left:59.6vw;
+  width: 6.8vh;
+}
+
+#fibras_nervosas{
+  top: 78vw;
+  height: 2.5vh;
+  left:20vw;
+  width: 6.8vh;
+}
+
+#corno_dorsal{
+  top: 92vw;
+  height: 3.2vh;
+  left:45vw;
+  width: 5.2vh;
+}
+
+#talamo{
+  top: 38vw;
+  height:1.4vh;
+  left:55vw;
+  width: 6.8vh;
+}
+
+#cortex_cerebral{
+  top: 26vw;
+  left:31vw;
+  width: 5vh;
+  height:3.5vh;
+}
+
+#interneuronio{
+  top: 115vw;
+  height: 1.8vh;
+  left:66vw;
+  width: 10vh;
+}
+
+#trato_espino{
+  top: 88vw;
+  height: 2vh;
+  left:54vw;
+  width: 8vh;
+}
+
+#neurotrans{
+  top: 67vw;
+  width: 6vh;
+  height: 2.5vh;
+  left:35vw;
+}
+
 
 #acerto_alert {
   opacity: 0;
