@@ -1,7 +1,32 @@
 let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
-const acerto = () => {
+//Telas
+tela_quiz = () => {
+  document.getElementById("container").style.animationName = "acerto_sumir";
+  document.getElementById("btn_home").className = "material-icons icons";
+  document.getElementById("btn_quiz").className =
+    "material-icons icons_selected";
+  document.getElementById("quiz").style.display = "flex";
+  document.getElementById("quiz").style.animationName = "acerto";
+};
+
+tela_home = () => {
+  document.getElementById("container").style.animationName = "acerto";
+  document.getElementById("container").style.display = "flex";
+  document.getElementById("quiz").style.animationName = "acerto_sumir";
+  setTimeout(() => {
+    document.getElementById("quiz").style.display = "none";
+  }, 1000);
+  document.getElementById("btn_home").className = "material-icons icons";
+  document.getElementById("btn_quiz").className =
+    "material-icons icons_selected";
+};
+
+// Fim Telas
+
+//Ações
+acerto = () => {
   let cerebro = document.getElementById("mao_direita");
   cerebro.style.animationName = "aparecer";
 
@@ -39,7 +64,7 @@ const acerto = () => {
   }, 2000);
 };
 
-const erro = () => {
+erro = () => {
   errado.play();
   document.getElementById("overlay").style.animationName = "acerto";
   document.getElementById("overlay").style.display = "inherit";
@@ -62,3 +87,4 @@ const erro = () => {
       "acerto_sumir";
   }, 3000);
 };
+// Fim Ações

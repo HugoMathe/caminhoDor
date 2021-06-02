@@ -1,4 +1,4 @@
-html{
+html {
   overflow-y: hidden;
 }
 
@@ -9,7 +9,7 @@ body {
   width: 100%;
   background-color: #2e2e33;
   animation-duration: 1s;
-  animation-fill-mode: forwards;  
+  animation-fill-mode: forwards;
   overflow-y: hidden;
 }
 
@@ -71,12 +71,19 @@ strong {
   height: 12%;
 }
 
+#quiz,
 #container {
-  width: 50vh;
-  display: flex;
   flex-wrap: wrap;
   padding-top: 5vh;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
   flex-direction: row;
+}
+
+#container {
+  width: 50vh;
+  /* display: flex; */
+  display: none;
   transition: transform 2.5s, filter 1.5s ease-in-out;
   filter: brightness(150%);
 }
@@ -86,6 +93,29 @@ strong {
   height: 88%;
   object-fit: contain;
   overflow: hidden;
+}
+
+#quiz {
+  width: 100vh;
+  justify-items: space-around;
+  background-color: ivory;
+}
+
+.opcao {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 7vh;
+  align-items: center;
+}
+
+.opcao > input {
+  width: 5vh;
+  height: 5vh;
+}
+
+.opcao > p {
+  color: white;
 }
 
 .overlay {
@@ -100,99 +130,99 @@ strong {
   z-index: 2;
 }
 
-#mao_direita{
+#mao_direita {
   top: 44%;
   width: 15vh;
-  left:0%;
+  left: 0%;
 }
 
-#esquerdo{
+#esquerdo {
   top: 13%;
-  left:65%;
+  left: 65%;
   width: 8vh;
 }
 
-#via_desc{
+#via_desc {
   top: 25.5%;
-  left:29%;
+  left: 29%;
   width: 10.2vh;
 }
 
-#via_asc{
+#via_asc {
   top: 27%;
   height: 2vh;
-  left:61%;
+  left: 61%;
   width: 12.5vh;
 }
 
-#tronco_cerebral{
+#tronco_cerebral {
   top: 34%;
   height: 3vh;
-  left:71%;
+  left: 71%;
   width: 6vh;
 }
 
-#neuronio_terc{
+#neuronio_terc {
   top: 21.4%;
   height: 3vh;
-  left:66%;
+  left: 66%;
   width: 7.7vh;
 }
 
-#fibras_nervosas{
+#fibras_nervosas {
   top: 51.1%;
   height: 2.5vh;
-  left:22%;
+  left: 22%;
   width: 6.8vh;
 }
 
-#corno_dorsal{
+#corno_dorsal {
   top: 60.5%;
   height: 3.2vh;
-  left:50%;
+  left: 50%;
   width: 5.2vh;
 }
 
-#talamo{
+#talamo {
   top: 25%;
-  height:1.4vh;
+  height: 1.4vh;
   left: 62%;
   width: 6.8vh;
 }
 
-#direito{
+#direito {
   top: 12%;
-  left:39%;
+  left: 39%;
   width: 6.7vh;
-  height:3.5vh;
+  height: 3.5vh;
 }
 
-#interneuronio{
+#interneuronio {
   top: 76.3%;
   height: 1.8vh;
-  left:75%;
+  left: 75%;
   width: 10vh;
 }
 
-#trato_espino{
+#trato_espino {
   top: 57.8%;
   height: 2vh;
-  left:62%;
+  left: 62%;
   width: 8vh;
 }
 
-#neurotrans{
+#neurotrans {
   top: 44.5%;
   width: 6vh;
   height: 2.5vh;
-  left:38.5%;
+  left: 38.5%;
 }
 
-#substancia_gel{
+#substancia_gel {
   top: 65%;
   width: 15vh;
   height: 2.5vh;
-  left:39.3%;
+  left: 39.3%;
 }
 
 #acerto_alert {

@@ -41,14 +41,40 @@
           <div id="substancia_gel" class="overlay"></div>
           <img src="./caminho.jpg" id="caminho" alt="" />
         </div>
+        <div id="quiz">
+          <div class="blur"></div>
+          <div class="opcao" id="opc_esquerdo">
+            <p>Esquerdo</p>
+            <select id="slct_esquerdo">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              </select>
+          </div>
+        </div>
       </div>
     </div>
     <div id="navbar">
-      <span class="material-icons icons_selected" onclick="acerto()">
+      <span class="material-icons icons_selected" id="btn_home" onclick="tela_home(); acerto()">
         home
       </span>
-      <span class="material-icons icons" onclick="erro()"> quiz </span>
-      <span class="material-icons icons"> question_answer </span>
+      <span class="material-icons icons" id="btn_quiz" onclick="tela_quiz()"> quiz </span>
+      <span class="material-icons icons" id="btn_resolucao"> question_answer </span>
     </div>
   </body>
 </html>
