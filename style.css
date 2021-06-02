@@ -73,7 +73,6 @@ strong {
 
 #container {
   width: 50vh;
-  background-color: firebrick;
   display: flex;
   flex-wrap: wrap;
   padding-top: 5vh;
@@ -127,68 +126,74 @@ strong {
 }
 
 #tronco_cerebral{
-  top: 52vw;
+  top: 34%;
   height: 3vh;
-  left:63vw;
+  left:71%;
   width: 6vh;
 }
 
 #neuronio_terc{
-  top: 32.2vw;
+  top: 21.4%;
   height: 3vh;
-  left:59.6vw;
-  width: 6.8vh;
+  left:66%;
+  width: 7.7vh;
 }
 
 #fibras_nervosas{
-  top: 77.3vw;
+  top: 51.1%;
   height: 2.5vh;
-  left:20vw;
+  left:22%;
   width: 6.8vh;
 }
 
 #corno_dorsal{
-  top: 92vw;
+  top: 60.5%;
   height: 3.2vh;
-  left:45vw;
+  left:50%;
   width: 5.2vh;
 }
 
 #talamo{
-  top: 38vw;
+  top: 25%;
   height:1.4vh;
-  left:55vw;
+  left: 62%;
   width: 6.8vh;
 }
 
-#cortex_cerebral{
-  top: 26vw;
-  left:31vw;
-  width: 5vh;
+#direito{
+  top: 12%;
+  left:39%;
+  width: 6.7vh;
   height:3.5vh;
 }
 
 #interneuronio{
-  top: 115vw;
+  top: 76.3%;
   height: 1.8vh;
-  left:66vw;
+  left:75%;
   width: 10vh;
 }
 
 #trato_espino{
-  top: 88vw;
+  top: 57.8%;
   height: 2vh;
-  left:54vw;
+  left:62%;
   width: 8vh;
 }
 
 #neurotrans{
-  top: 67vw;
+  top: 44.5%;
   width: 6vh;
   height: 2.5vh;
-  left:35vw;
+  left:38.5%;
 }
 
+#substancia_gel{
+  top: 65%;
+  width: 15vh;
+  height: 2.5vh;
+  left:39.3%;
+}
 
 #acerto_alert {
   opacity: 0;
