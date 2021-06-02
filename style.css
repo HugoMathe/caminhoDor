@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: "Roboto";
   height: 100vh;
+  width: 100%;
   background-color: #2e2e33;
   animation-duration: 1s;
   animation-fill-mode: forwards;  
@@ -52,9 +53,11 @@ strong {
   display: flex;
   width: 90%;
   justify-content: center;
+  object-fit: contain;
   height: 100%;
   margin: auto;
   padding: 0;
+  overflow: hidden;
 }
 
 #navbar {
@@ -69,6 +72,8 @@ strong {
 }
 
 #container {
+  width: 50vh;
+  background-color: firebrick;
   display: flex;
   flex-wrap: wrap;
   padding-top: 5vh;
@@ -97,27 +102,27 @@ strong {
 }
 
 #mao_direita{
-  top: 67vw;
-  width: 12vh;
-  left:3.6vw;
+  top: 44%;
+  width: 15vh;
+  left:0%;
 }
 
 #esquerdo{
-  top: 20vw;
-  left:58vw;
+  top: 13%;
+  left:65%;
   width: 8vh;
 }
 
 #via_desc{
-  top: 39vw;
-  left:28vw;
+  top: 25.5%;
+  left:29%;
   width: 10.2vh;
 }
 
 #via_asc{
-  top: 41vw;
+  top: 27%;
   height: 2vh;
-  left:54.6vw;
+  left:61%;
   width: 12.5vh;
 }
 
@@ -136,7 +141,7 @@ strong {
 }
 
 #fibras_nervosas{
-  top: 78vw;
+  top: 77.3vw;
   height: 2.5vh;
   left:20vw;
   width: 6.8vh;
@@ -272,3 +277,11 @@ strong {
     opacity: 0;
   }
 }
+
+/* @media screen and (orientation: landscape) {
+  #master{
+    position: relative;
+    width: 40vw;
+    margin: 0 auto;
+  }
+} */
