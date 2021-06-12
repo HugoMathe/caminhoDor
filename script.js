@@ -78,6 +78,10 @@ tela_quiz = () => {
 
         i++;
       }
+      var ul = document.getElementById("quiz");
+      for (let j = ul.children.length; j >= 0; j--) {
+        ul.appendChild(ul.children[(Math.random() * j) | 0]);
+      }
     }
   }, 1000);
 };
@@ -146,15 +150,15 @@ acerto = (opcao_id_img) => {
       opcao_id_img == "opcao_18"
     ) {
     } else {
-      if(window.matchMedia("(orientation: portrait)").matches){
+      if (window.matchMedia("(orientation: portrait)").matches) {
         document.getElementById("container").style.transformOrigin =
-        Math.trunc(opcao.getBoundingClientRect().left) -
-        10 +
-        "px" +
-        " " +
-        (Math.trunc(opcao.getBoundingClientRect().top) - 30 + "px");
+          Math.trunc(opcao.getBoundingClientRect().left) -
+          10 +
+          "px" +
+          " " +
+          (Math.trunc(opcao.getBoundingClientRect().top) - 30 + "px");
 
-      document.getElementById("container").style.transform = "scale(3)";
+        document.getElementById("container").style.transform = "scale(3)";
       }
     }
 
