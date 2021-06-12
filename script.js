@@ -103,7 +103,7 @@ tela_home = () => {
 verificador = (valor, correto, id_texto, id_select) => {
   if (valor == correto) {
     document.getElementById(id_texto).style.color = "#01ea77";
-    document.getElementById(id_select).style.color = "#01ea77";
+    document.getElementById(id_select).style.color = "#000000";
     document.getElementById(id_select).disabled = "true";
     let opcao_id_img = "opcao_" + correto;
     acerto(opcao_id_img);
