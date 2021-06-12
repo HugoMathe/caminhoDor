@@ -78,28 +78,6 @@ tela_quiz = () => {
 
         i++;
       }
-
-      (function ($) {
-        $.fn.shuffle = function () {
-          var allElems = this.get(),
-            getRandom = function (max) {
-              return Math.floor(Math.random() * max);
-            },
-            shuffled = $.map(allElems, function () {
-              var random = getRandom(allElems.length),
-                randEl = $(allElems[random]).clone(true)[0];
-              return randEl;
-            });
-  
-          this.each(function (i) {
-            $(this).replaceWith($(shuffled[i]));
-          });
-  
-          return $(shuffled);
-        };
-      })(jQuery);
-      $("li").shuffle();
-
     }
   }, 1000);
 };
@@ -124,10 +102,11 @@ tela_home = () => {
 
 verificador = (valor, correto, id_texto, id_select) => {
   if (valor == correto) {
-    acerto();
     document.getElementById(id_texto).style.color = "#01ea77";
     document.getElementById(id_select).style.color = "#01ea77";
     document.getElementById(id_select).disabled = "true";
+    let opcao_id_img = "opcao_" + correto;
+    acerto(opcao_id_img);
   } else {
     document.getElementById(id_texto).style.color = "#fe0000";
     document.getElementById(id_select).style.color = "#fe0000";
@@ -136,7 +115,7 @@ verificador = (valor, correto, id_texto, id_select) => {
   console.log(id_texto, id_select, valor, correto);
 };
 
-acerto = () => {
+acerto = (opcao_id_img) => {
   tela_home();
 
   document.getElementById("acerto_alert").style.borderColor = "#01ea77";
@@ -144,25 +123,41 @@ acerto = () => {
     "<span class='material-icons acerto'> check_circle </span>";
   document.getElementById("acerto_alert").innerHTML += "<p>Você Acertou!</p>";
 
-  let cerebro = document.getElementById("mao_direita");
-  cerebro.style.animationName = "aparecer";
+  let opcao = document.getElementById(opcao_id_img);
+  opcao.style.animationName = "aparecer";
 
   setTimeout(() => {
     document.body.style.animationName = "bkg_escuro";
   }, 1000);
 
-  setTimeout(() => {
-    document.getElementById("container").style.transformOrigin =
-      Math.trunc(cerebro.getBoundingClientRect().left) -
-      10 +
-      "px" +
-      " " +
-      (Math.trunc(cerebro.getBoundingClientRect().top) - 30 + "px");
+  console.log(opcao_id_img);
 
-    document.getElementById("container").style.transform = "scale(3)";
+  setTimeout(() => {
+    if (
+      opcao_id_img == "opcao_2" ||
+      opcao_id_img == "opcao_3" ||
+      opcao_id_img == "opcao_4" ||
+      opcao_id_img == "opcao_6" ||
+      opcao_id_img == "opcao_7" ||
+      opcao_id_img == "opcao_10" ||
+      opcao_id_img == "opcao_14" ||
+      opcao_id_img == "opcao_16" ||
+      opcao_id_img == "opcao_18"
+    ) {
+    } else {
+      document.getElementById("container").style.transformOrigin =
+        Math.trunc(opcao.getBoundingClientRect().left) -
+        10 +
+        "px" +
+        " " +
+        (Math.trunc(opcao.getBoundingClientRect().top) - 30 + "px");
+
+      document.getElementById("container").style.transform = "scale(3)";
+    }
+
     document.getElementById("container").style.zIndex = 6;
     document.getElementById("acerto_alert").style.animationName = "acerto";
-    cerebro.style.zIndex = 5;
+    opcao.style.zIndex = 5;
 
     setTimeout(() => {
       correto.play();
