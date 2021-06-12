@@ -146,7 +146,8 @@ acerto = (opcao_id_img) => {
       opcao_id_img == "opcao_18"
     ) {
     } else {
-      document.getElementById("container").style.transformOrigin =
+      if(window.matchMedia("(orientation: portrait)").matches){
+        document.getElementById("container").style.transformOrigin =
         Math.trunc(opcao.getBoundingClientRect().left) -
         10 +
         "px" +
@@ -154,6 +155,7 @@ acerto = (opcao_id_img) => {
         (Math.trunc(opcao.getBoundingClientRect().top) - 30 + "px");
 
       document.getElementById("container").style.transform = "scale(3)";
+      }
     }
 
     document.getElementById("container").style.zIndex = 6;
