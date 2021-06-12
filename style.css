@@ -51,7 +51,7 @@ strong {
 
 #content {
   display: flex;
-  width: 90%;
+  width: 100%;
   justify-content: center;
   object-fit: contain;
   height: 100%;
@@ -77,9 +77,6 @@ strong {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   flex-direction: row;
-}
-
-#container {
   width: 50vh;
   display: flex;
   transition: transform 2.5s, filter 1.5s ease-in-out;
@@ -98,18 +95,20 @@ strong {
   opacity: 0;
   flex-direction: column;
   padding-top: 5vh;
+  padding-left: 5vh;
+  padding-right: 5vh;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   width: 100vh;
   overflow-y: auto;
-  justify-items: space-around;
-  background-color: ivory;
+  justify-items: space-between;
+  background-color: #95a5a6;
 }
 
 .opcao {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 7vh;
   align-items: center;
 }

@@ -142,6 +142,7 @@ acerto = (opcao_id_img) => {
       opcao_id_img == "opcao_10" ||
       opcao_id_img == "opcao_14" ||
       opcao_id_img == "opcao_16" ||
+      opcao_id_img == "opcao_17" ||
       opcao_id_img == "opcao_18"
     ) {
     } else {
