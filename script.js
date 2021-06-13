@@ -1,7 +1,7 @@
 let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
-let tempo = 20;
+let tempo = 600;
 let acertos = [];
 let textos_obj = {
   obj: [
@@ -33,8 +33,11 @@ let timer = "";
 
 iniciar = () => {
   document.getElementById("landing").style.animationName = "acerto_sumir";
+  document.getElementById("landing_bkg").style.animationDuration = "1s";
+  document.getElementById("landing_bkg").style.animationName = "acerto_sumir";
   setTimeout(() => {
     document.getElementById("landing").style.display = "none";
+    document.getElementById("landing_bkg").style.display = "none";
   }, 1000);
 
   //Relógio Start
