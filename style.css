@@ -66,6 +66,12 @@ h1{
   color: #006eff;
 }
 
+.material-icons.texto {
+  vertical-align: middle;
+  font-size: 3vh;
+  color: #ffffff;
+}
+
 #title {
   font-size: 3vh;
   margin-top: 0;
@@ -374,7 +380,7 @@ ol{
   z-index: 15;
 }
 
-#fim_popup {
+#fim_popup, #inicio_popup {
   display: none;
   opacity: 0;
   animation-duration: 1s;
@@ -393,8 +399,13 @@ ol{
   z-index: 14;
 }
 
-#fim_popup > p {
+#fim_popup, #inicio_popup > p {
   font-size: 2.5vh;
+}
+
+#inicio_popup{
+  display: flex;
+  padding: 2vh 2vh;
   color: white;
 }
 

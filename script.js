@@ -35,36 +35,44 @@ iniciar = () => {
   document.getElementById("landing").style.animationName = "acerto_sumir";
   document.getElementById("landing_bkg").style.animationDuration = "1s";
   document.getElementById("landing_bkg").style.animationName = "acerto_sumir";
+  document.getElementById("inicio_popup").style.animationName = "acerto";
+
   setTimeout(() => {
     document.getElementById("landing").style.display = "none";
     document.getElementById("landing_bkg").style.display = "none";
   }, 1000);
+};
 
-  //Relógio Start
-  let contador_tempo = () => {
-    tempo = tempo - 1;
+pos_pop_ini = () => {
+  document.getElementById("inicio_popup").style.animationName = "acerto_sumir";
 
-    if (tempo < 120) {
-      document.getElementById("relogio").style.borderColor = "#fe0000";
-    }
+  setTimeout(() => {
+    //Relógio Start
+    let contador_tempo = () => {
+      tempo = tempo - 1;
 
-    if (tempo <= 0) {
-      fim_popup(1);
-    }
+      if (tempo < 120) {
+        document.getElementById("relogio").style.borderColor = "#fe0000";
+      }
 
-    let minutos = Math.floor(tempo / 60);
-    let segundos = tempo - minutos * 60;
+      if (tempo <= 0) {
+        fim_popup(1);
+      }
 
-    function str_pad_left(string, pad, length) {
-      return (new Array(length + 1).join(pad) + string).slice(-length);
-    }
+      let minutos = Math.floor(tempo / 60);
+      let segundos = tempo - minutos * 60;
 
-    let tempo_final =
-      str_pad_left(minutos, "0", 2) + ":" + str_pad_left(segundos, "0", 2);
-    document.getElementById("txt_relogio").innerHTML = tempo_final;
-  };
+      function str_pad_left(string, pad, length) {
+        return (new Array(length + 1).join(pad) + string).slice(-length);
+      }
 
-  timer = setInterval(contador_tempo, 1000);
+      let tempo_final =
+        str_pad_left(minutos, "0", 2) + ":" + str_pad_left(segundos, "0", 2);
+      document.getElementById("txt_relogio").innerHTML = tempo_final;
+    };
+
+    timer = setInterval(contador_tempo, 1000);
+  }, 1000);
 };
 
 tela_quiz = () => {
@@ -181,8 +189,8 @@ tela_textos = () => {
     document.getElementById("container").style.animationName = "acerto_sumir";
 
     setTimeout(() => {
-      document.getElementById("fim_popup").style.display = 'none';
-      document.getElementById("overlay").style.display = 'none';
+      document.getElementById("fim_popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
 
       document.getElementById("btn_home").className = "material-icons icons";
       document.getElementById("btn_resolucao").className =
