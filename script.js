@@ -72,7 +72,15 @@ pos_pop_ini = () => {
     };
 
     timer = setInterval(contador_tempo, 1000);
+    
+    setTimeout(() => {
+      document.getElementById("relogio").style.animationName = "acerto";      
+    },1000)
+    
+    document.getElementById("inicio_popup").style.display = "none";
+
   }, 1000);
+
 };
 
 tela_quiz = () => {
@@ -83,6 +91,7 @@ tela_quiz = () => {
   setTimeout(() => {
     document.getElementById("textos").style.display = "none";
     document.getElementById("container").style.display = "none";
+    document.getElementById("relogio").style.display = "none";
     document.getElementById("relogio").innerHTML = "";
 
     document.getElementById("relogio_upper").style.animationName = "acerto";
@@ -150,6 +159,9 @@ tela_quiz = () => {
 tela_home = () => {
   document.getElementById("quiz").style.animationName = "acerto_sumir";
   document.getElementById("textos").style.animationName = "acerto_sumir";
+  document.getElementById("relogio").style.animationName = "acerto";
+
+  document.getElementById("relogio").innerHTML = "<p id='txt_relogio'></p>";
   document.getElementById("relogio_upper").style.animationName = "acerto_sumir";
   setTimeout(() => {
     document.getElementById("btn_home").className =
@@ -162,10 +174,8 @@ tela_home = () => {
     document.getElementById("relogio_upper").innerHTML = "";
 
     document.getElementById("container").style.animationName = "acerto";
-    document.getElementById("relogio").style.animationName = "acerto";
-
-    document.getElementById("relogio").innerHTML = "<p id='txt_relogio'></p>";
     document.getElementById("container").style.display = "flex";
+    document.getElementById("relogio").style.display = "flex";
   }, 1000);
 };
 
