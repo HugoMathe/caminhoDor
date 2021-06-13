@@ -13,9 +13,10 @@ body {
   overflow-y: hidden;
 }
 
-h1 {
-  font-weight: 300;
-  margin-top: 0;
+h1{
+  font-size: 5vh;
+  padding: 0;
+  margin: 0;
 }
 
 #master {
@@ -100,8 +101,9 @@ h1 {
   overflow: hidden;
 }
 
-#quiz {
+#quiz, #textos {
   display: none;
+  color: white;
   opacity: 0;
   flex-direction: column;
   padding-top: 7vh;
@@ -115,6 +117,10 @@ h1 {
   background-color: black;
 }
 
+#textos > p{
+  font-size: 3.5vh;
+}
+
 .combo {
   background-color: #2e2e33;
   height: 3vh;
@@ -124,6 +130,7 @@ h1 {
 }
 
 .opcao {
+  margin: 2vh 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -131,19 +138,29 @@ h1 {
   align-items: center;
 }
 
+.sem_padding_margin{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
 .opcao > input {
   width: 5vh;
   height: 5vh;
 }
 
-.opcao > p {
+.opcao > p, li {  
   color: white;
-  font-size: 3vh;
+  font-size: 3.5vh;
+}
+
+ol{
+  margin-left: 4vh;
 }
 
 .overlay {
   display: block;
-  background-color: fuchsia;
+  background-color: black;
+  /* background-color: fuchsia; */
   animation-duration: 1s;
   animation-fill-mode: forwards;
   opacity: 1;
@@ -362,7 +379,7 @@ h1 {
   height: 40%;
   transform: translate(-50%, -50%);
   border-radius: 4vh;
-  z-index: 9999999999999999999999999;
+  z-index: 14;
 }
 
 #fim_popup > p {
@@ -428,6 +445,10 @@ h1 {
   border-color: #006eff;
 }
 
+#botao_iniciar > p{
+  font-size: 3vh;
+}
+
 #botao_textos,
 #botao_iniciar {
   cursor: pointer;
@@ -447,7 +468,7 @@ h1 {
 #overlay {
   display: none;
   position: absolute;
-  z-index: 11;
+  z-index: 13;
   opacity: 0;
   height: 100%;
   width: 100%;
