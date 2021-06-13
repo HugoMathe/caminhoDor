@@ -1,6 +1,9 @@
 let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
+let tempo = 600;
+let acertos = []
+
 let textos_obj = {
   obj: [
     { 1: "Mão Direita" },
@@ -24,14 +27,47 @@ let textos_obj = {
   ],
 };
 
-console.log(textos_obj.obj[0][1]);
-
 //Telas
+
+iniciar = () => {
+  document.getElementById("landing").style.animationName = "acerto_sumir";
+  setTimeout(() => {
+    document.getElementById("landing").style.display = "none";
+  }, 1000);
+
+  //Relógio Start
+  setInterval(() => {
+    tempo = tempo - 1;
+
+    if (tempo < 120) {
+      document.getElementById("relogio").style.borderColor = "#fe0000";
+    }
+
+    let minutos = Math.floor(tempo / 60);
+    let segundos = tempo - minutos * 60;
+
+    function str_pad_left(string, pad, length) {
+      return (new Array(length + 1).join(pad) + string).slice(-length);
+    }
+
+    let tempo_final =
+      str_pad_left(minutos, "0", 2) + ":" + str_pad_left(segundos, "0", 2);
+    document.getElementById("txt_relogio").innerHTML = tempo_final;
+  }, 1000);
+};
+
 tela_quiz = () => {
   document.getElementById("container").style.animationName = "acerto_sumir";
+  document.getElementById("relogio").style.animationName = "acerto_sumir";
 
   setTimeout(() => {
     document.getElementById("container").style.display = "none";
+    document.getElementById("relogio").innerHTML = "";
+
+    document.getElementById("relogio_upper").style.animationName = "acerto";
+    document.getElementById("relogio_upper").innerHTML =
+      "<p id='txt_relogio'></p>";
+
     document.getElementById("btn_home").className = "material-icons icons";
     document.getElementById("btn_quiz").className =
       "material-icons icons_selected";
@@ -55,6 +91,8 @@ tela_quiz = () => {
 
         let select = document.createElement("select");
         select.id = "select_" + texto_opc;
+
+        select.className = "combo";
 
         div_opcao.appendChild(select);
 
@@ -89,15 +127,26 @@ tela_quiz = () => {
 tela_home = () => {
   try {
     document.getElementById("quiz").style.animationName = "acerto_sumir";
+    document.getElementById("relogio_upper").style.animationName =
+      "acerto_sumir";
   } catch {}
   setTimeout(() => {
     document.getElementById("quiz").style.display = "none";
+    document.getElementById("relogio_upper").innerHTML = "";
+
     document.getElementById("container").style.animationName = "acerto";
+    document.getElementById("relogio").style.animationName = "acerto";
+
+    document.getElementById("relogio").innerHTML = "<p id='txt_relogio'></p>";
     document.getElementById("container").style.display = "flex";
   }, 1000);
   document.getElementById("btn_home").className =
     "material-icons icons_selected";
   document.getElementById("btn_quiz").className = "material-icons icons";
+};
+
+tela_textos = () => {
+  erro("Finalize o questionário para acessar essa função.");
 };
 
 // Fim Telas
@@ -107,9 +156,10 @@ tela_home = () => {
 verificador = (valor, correto, id_texto, id_select) => {
   if (valor == correto) {
     document.getElementById(id_texto).style.color = "#01ea77";
-    document.getElementById(id_select).style.color = "#000000";
+    document.getElementById(id_select).style.color = "#BFBFBF";
     document.getElementById(id_select).disabled = "true";
     let opcao_id_img = "opcao_" + correto;
+    acertos.push(correto)
     acerto(opcao_id_img);
   } else {
     document.getElementById(id_texto).style.color = "#fe0000";
@@ -179,11 +229,17 @@ acerto = (opcao_id_img) => {
 
     setTimeout(() => {
       document.body.style.animationName = "bkg_voltar";
+      if(acertos.length == 18){
+        fim_popup()
+      }
     }, 7000);
   }, 2000);
+
+  console.log(acertos.length)
+
 };
 
-erro = () => {
+erro = (texto) => {
   errado.play();
   document.getElementById("overlay").style.animationName = "acerto";
   document.getElementById("overlay").style.display = "inherit";
@@ -196,7 +252,13 @@ erro = () => {
   document.getElementById("acerto_alert").style.borderColor = "#fe0000";
   document.getElementById("acerto_alert").innerHTML =
     "<span class='material-icons acerto'> highlight_off </span>";
-  document.getElementById("acerto_alert").innerHTML += "<p>Você errou!</p>";
+
+  if (!texto) {
+    document.getElementById("acerto_alert").innerHTML += "<p>Você errou!</p>";
+  } else {
+    document.getElementById("acerto_alert").innerHTML += "<p>" + texto + "</p>";
+  }
+
   document.getElementById("acerto_alert").style.animationDuration = "1.5s";
   document.getElementById("acerto_alert").style.animationName = "acerto";
 
@@ -205,4 +267,26 @@ erro = () => {
       "acerto_sumir";
   }, 3000);
 };
+
+fim_popup = () => {
+
+  document.getElementById("overlay").style.backgroundColor = "#000000"
+  document.getElementById("overlay").style.opacity = "0.4"
+
+  document.getElementById("overlay").style.animationName = "acerto";
+  document.getElementById("overlay").style.display = "inherit";
+
+  document.getElementById("fim_popup").innerHTML =
+    "<span class='material-icons fim_icon'> emoji_events </span>";
+  document.getElementById("fim_popup").innerHTML +=
+    "<p>Parabéns, você acertou todas as questões!</p>";
+  document.getElementById("fim_popup").innerHTML +=
+    "<div id='botao_textos'><p>Ir para respostas</p></div>";
+  document.getElementById("fim_popup").style.animationName = "acerto";
+
+  setTimeout(() => {
+    document.getElementById("fim_popup").style.display = "flex";
+  }, 1000);
+};
+
 // Fim Ações

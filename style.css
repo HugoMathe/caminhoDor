@@ -1,7 +1,6 @@
 html {
   overflow-y: hidden;
-  /* font-family: 'Gloria Hallelujah', cursive; */
-  font-family: 'Annie Use Your Telescope', cursive;
+  font-family: "Annie Use Your Telescope", cursive;
 }
 
 body {
@@ -16,13 +15,7 @@ body {
 
 h1 {
   font-weight: 300;
-  color: #16a085;
   margin-top: 0;
-}
-
-strong {
-  font-weight: 900;
-  color: #1abc9c;
 }
 
 #master {
@@ -33,6 +26,22 @@ strong {
   border-bottom-right-radius: 8vh;
   background-color: #000000;
   overflow-y: hidden;
+}
+
+#landing {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  position: absolute;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 12;
 }
 
 .material-icons.icons {
@@ -95,7 +104,7 @@ strong {
   display: none;
   opacity: 0;
   flex-direction: column;
-  padding-top: 5vh;
+  padding-top: 7vh;
   padding-left: 5vh;
   padding-right: 5vh;
   animation-duration: 1s;
@@ -104,6 +113,14 @@ strong {
   overflow-y: auto;
   justify-items: space-between;
   background-color: black;
+}
+
+.combo {
+  background-color: #2e2e33;
+  height: 3vh;
+  width: 5vh;
+  border: 0;
+  color: white;
 }
 
 .opcao {
@@ -148,7 +165,7 @@ strong {
 #opcao_4,
 #opcao_7,
 #opcao_18,
-#opcao_16{
+#opcao_16 {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   width: auto;
@@ -218,7 +235,7 @@ strong {
   width: 5.8vh;
 }
 
-#opcao_7_2{
+#opcao_7_2 {
   top: 84.8%;
   left: 50.8%;
   height: 1.7vh;
@@ -282,14 +299,12 @@ strong {
   height: 3.5vh;
 }
 
-
 #opcao_16_1 {
   top: 44.5%;
   width: 6vh;
   height: 2.5vh;
   left: 38.5%;
 }
-
 
 #opcao_16_2 {
   top: 61.2%;
@@ -325,9 +340,78 @@ strong {
   align-self: flex-end;
   position: absolute;
   top: 85%;
+  height: 4vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9;
+}
+
+#fim_popup {
+  display: none;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: #2e2e33;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  border-radius: 4vh;
+  z-index: 9999999999999999999999999;
+}
+
+#fim_popup > p {
+  font-size: 2.5vh;
+  color: white;
+}
+
+#relogio {
+  position: absolute;
+  opacity: 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vh;
+  height: 8vh;
+  border: 0.4vh solid #01ea77;
+  border-radius: 100%;
+  top: 86%;
+  left: 9%;
+  z-index: 10;
+}
+
+#relogio,
+#relogio_upper > p {
+  color: white;
+  font-size: 3.4vh;
+}
+
+#relogio_upper {
+  display: flex;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 6vh;
+  background-color: #2e2e33;
+  z-index: 12;
+}
+
+#botao_iniciar,
+#acerto_alert,
+#botao_textos {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -336,15 +420,34 @@ strong {
   background-color: #000000;
   width: max-content;
   padding: 1vh 1vh;
-  height: 4vh;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+}
+
+#botao_iniciar {
+  border-color: #006eff;
+}
+
+#botao_textos,
+#botao_iniciar {
+  cursor: pointer;
+  height: 3vh;
+}
+
+#botao_textos {
+  background-color: #2e2e33;
+  border-color: #01ea77;
+}
+
+#botao_textos > p{
+  font-size: 2.5vh;
+  color: white;
 }
 
 #overlay {
   display: none;
   position: absolute;
-  z-index: 999999;
+  z-index: 11;
   opacity: 0;
   height: 100%;
   width: 100%;
@@ -358,6 +461,11 @@ strong {
   color: white;
   padding: 0 0.5vh;
   font-size: 2.5vh;
+}
+
+.material-icons.fim_icon {
+  color: white;
+  font-size: 10vh;
 }
 
 @keyframes aparecer {

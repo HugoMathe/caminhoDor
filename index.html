@@ -21,10 +21,20 @@
   </head>
 
   <body>
+    <div id="landing">
+      <h1>Caminho da Dor</h1>
+      <div id = "botao_iniciar" onclick="iniciar()"><h2>Iniciar</h2></div>
+    </div>
     <div id="master">
       <div id="overlay"></div>
       <div id="content">
+
+        <div id="fim_popup"></div>
+
         <div id="acerto_alert"></div>
+        <div id="relogio"><p id="txt_relogio"></p></div>
+        <div id="relogio_upper" onclick="fim_popup()"></div>
+
         <div id="container">
           <div id="opcao_1" class="overlay"></div>
 
@@ -94,7 +104,7 @@
       <span class="material-icons icons" id="btn_quiz" onclick="tela_quiz()">
         quiz
       </span>
-      <span class="material-icons icons" id="btn_resolucao">
+      <span class="material-icons icons" id="btn_resolucao" onclick="tela_textos()">
         question_answer
       </span>
     </div>
