@@ -3,6 +3,10 @@ html {
   font-family: "Annie Use Your Telescope", cursive;
 }
 
+p{
+  color: white;
+}
+
 body {
   margin: 0;
   height: 100vh;
@@ -481,6 +485,7 @@ ol{
 }
 
 #botao_textos {
+  margin-top: 1vh;
   background-color: #2e2e33;
   border-color: #01ea77;
 }

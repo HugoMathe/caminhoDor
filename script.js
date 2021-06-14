@@ -1,7 +1,7 @@
 let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
-let tempo = 600;
+let tempo = 10;
 let acertos = [];
 let textos_obj = {
   obj: [
@@ -55,7 +55,7 @@ pos_pop_ini = () => {
         document.getElementById("relogio").style.borderColor = "#fe0000";
       }
 
-      if (tempo <= 0) {
+      if (tempo == 0) {
         fim_popup(1);
       }
 
@@ -72,15 +72,13 @@ pos_pop_ini = () => {
     };
 
     timer = setInterval(contador_tempo, 1000);
-    
+
     setTimeout(() => {
-      document.getElementById("relogio").style.animationName = "acerto";      
-    },1000)
-    
+      document.getElementById("relogio").style.animationName = "acerto";
+    }, 1000);
+
     document.getElementById("inicio_popup").style.display = "none";
-
   }, 1000);
-
 };
 
 tela_quiz = () => {
@@ -361,13 +359,14 @@ fim_popup = (estado) => {
   }
 
   if (estado == 1) {
+    estado = undefined
     document.getElementById("fim_popup").innerHTML =
       "<span class='material-icons fim_icon'> sentiment_dissatisfied </span>";
     document.getElementById("fim_popup").innerHTML +=
       "<p>Que pena, o seu tempo esgotou...</p>";
     document.getElementById("fim_popup").innerHTML +=
       "<div id='botao_textos' onclick='window.location.reload()'><p>Tentar Novamente</p></div>";
-    document.getElementById("fim_popup").innerHTML += "<br/>";
+    // document.getElementById("fim_popup").innerHTML += "<br/>";
     document.getElementById("fim_popup").innerHTML +=
       "<div id='botao_textos' onclick='tela_textos()'><p>Ver respostas</p></div>";
   }
