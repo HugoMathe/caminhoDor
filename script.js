@@ -178,8 +178,11 @@ tela_home = () => {
 };
 
 tela_textos = () => {
-  console.log(tempo);
   if (tempo <= 0 || acertos.length == 18 || tempo == undefined) {
+
+    document.getElementById("navbar").innerHTML +=
+    "<span class='material-icons icons' onclick='window.location.reload()'>replay</span>";
+
     clearInterval(timer);
     console.log(tempo);
     tempo = undefined;
@@ -359,14 +362,13 @@ fim_popup = (estado) => {
   }
 
   if (estado == 1) {
-    estado = undefined
+    estado = undefined;
     document.getElementById("fim_popup").innerHTML =
       "<span class='material-icons fim_icon'> sentiment_dissatisfied </span>";
     document.getElementById("fim_popup").innerHTML +=
       "<p>Que pena, o seu tempo esgotou...</p>";
     document.getElementById("fim_popup").innerHTML +=
       "<div id='botao_textos' onclick='window.location.reload()'><p>Tentar Novamente</p></div>";
-    // document.getElementById("fim_popup").innerHTML += "<br/>";
     document.getElementById("fim_popup").innerHTML +=
       "<div id='botao_textos' onclick='tela_textos()'><p>Ver respostas</p></div>";
   }
