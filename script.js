@@ -1,7 +1,7 @@
 let correto = new Audio("src/correto.ogg");
 let errado = new Audio("src/errado.ogg");
 
-let tempo = 10;
+let tempo = 600;
 let acertos = [];
 let textos_obj = {
   obj: [

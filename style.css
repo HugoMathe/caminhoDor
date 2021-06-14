@@ -397,8 +397,8 @@ ol{
   background-color: #2e2e33;
   top: 50%;
   left: 50%;
-  width: 70%;
-  height: 40%;
+  width: 40vh;
+  height: 40vh;
   transform: translate(-50%, -50%);
   border-radius: 4vh;
   z-index: 14;
