@@ -261,8 +261,10 @@ acerto = (opcao_id_img) => {
       opcao_id_img == "opcao_4" ||
       opcao_id_img == "opcao_6" ||
       opcao_id_img == "opcao_7" ||
+      opcao_id_img == "opcao_9" ||
       opcao_id_img == "opcao_10" ||
       opcao_id_img == "opcao_14" ||
+      opcao_id_img == "opcao_15" ||
       opcao_id_img == "opcao_16" ||
       opcao_id_img == "opcao_17" ||
       opcao_id_img == "opcao_18"
@@ -372,6 +374,11 @@ fim_popup = (estado) => {
     document.getElementById("fim_popup").innerHTML +=
       "<div id='botao_textos' onclick='tela_textos()'><p>Ver respostas</p></div>";
   }
+};
+
+show_respostas = (elemento) => {
+  document.getElementById(elemento.id).nextElementSibling.style.display = 'flex';
+  document.getElementById(elemento.id).nextElementSibling.style.animationName = 'acerto'
 };
 
 // Fim Ações

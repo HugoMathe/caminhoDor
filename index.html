@@ -41,13 +41,14 @@
         <div id="inicio_popup">
           <h1>Como Jogar?</h1>
           <p>
-            Relacione os números da imagem localizada na tela
-            <span class="material-icons texto"> home </span>
-            com os textos da tela
-            <span class="material-icons texto"> quiz </span>. Você tem 10
-            minutos para relizar esses relacionamentos. Após a finalização, as
-            respostas estarão detalhadas na tela
-            <span class="material-icons texto">question_answer</span>.
+            Cada número na imagem representa uma etapa no Caminho da Dor. 
+            As etapas foram listadas aleatoriamente na tela <span class="material-icons texto"> quiz </span>.
+            O desafio consiste em relacionar corretamente todas as etapas com seus respectivos números na tela <span class="material-icons texto"> home </span>. 
+            Pode se começar por qualquer número/etapa.
+            O limite de tempo é de 10 minutos.
+            Após cada acerto, é possível se obter uma explicação clicando duas vezes no respectivo número.
+            Completado o desafio ou exaurido o tempo, é possível acessar uma relação de todas as etapas e suas explicações na tela <span class="material-icons texto">question_answer</span>.
+            O desafio pode ser repetido quantas vezes quiser, sempre começando do zero, clicando na tela <span class="material-icons texto">replay</span>.
           </p>
           <div
             id="botao_iniciar"
@@ -83,6 +84,7 @@
           </div>
 
           <div id="opcao_5" class="overlay"></div>
+          
           <div id="opcao_6" class="overlay"></div>
 
           <div id="opcao_7">
@@ -92,19 +94,37 @@
 
           <div id="opcao_8" class="overlay"></div>
 
-          <div id="opcao_9" class="overlay"></div>
+          <div id="opcao_9">
+            <div id="opcao_9_1" class="overlay"></div>
+            <div id="opcao_9_2" class="overlay"></div>
+            <div id="opcao_9_3" class="overlay"></div>
+            <div id="opcao_9_4" class="overlay"></div>
+            <div id="opcao_9_5" class="overlay"></div>
+          </div>
 
           <div id="opcao_10" class="overlay"></div>
 
-          <div id="opcao_11" class="overlay"></div>
+          <div id="opcao_11">
+            <div id="opcao_11_1" class="overlay"></div>
+            <div id="opcao_11_2" class="overlay"></div>
+          </div>
 
           <div id="opcao_12" class="overlay"></div>
 
           <div id="opcao_13" class="overlay"></div>
 
-          <div id="opcao_14" class="overlay"></div>
+          <div id="opcao_14">
+            <div id="opcao_14_1" class="overlay"></div>
+            <div id="opcao_14_2" class="overlay"></div>
+            <div id="opcao_14_3" class="overlay"></div>
+          </div>
 
-          <div id="opcao_15" class="overlay"></div>
+          <div id="opcao_15">
+            <div id="opcao_15_1" class="overlay"></div>
+            <div id="opcao_15_2" class="overlay"></div>
+            <div id="opcao_15_3" class="overlay"></div>
+            <div id="opcao_15_4" class="overlay"></div>
+          </div>
 
           <div id="opcao_16">
             <div id="opcao_16_1" class="overlay"></div>
@@ -116,44 +136,46 @@
           <div id="opcao_18">
             <div id="opcao_18_1" class="overlay"></div>
             <div id="opcao_18_2" class="overlay"></div>
+            <div id="opcao_18_3" class="overlay"></div>
           </div>
 
           <img src="./caminho.jpg" id="caminho" alt="" />
         </div>
         <div id="quiz"></div>
-        <div id="textos">
-          <h1>1 - Mão Direita</h1>
-          <p>
-            A mão direita sofre uma lesão evidente e as células imunológicas
-            reagem. Quando uma célula é danificada, incluindo as células da
-            pele, elas começam a liberar citocinas pró-inflamatórias. Estas
-            fomentam a liberação de prostaglandinas no local da lesão ou
-            infecção de tecidos. As prostaglandinas controlam o processo da
-            inflamação, entre outros.
-          </p>
+        <div id="textos">          
+          <h1 id="maodireita" onclick="show_respostas(this)">
+          1 - Mão Direita</h1>
+            <p class="respostas">
+              A mão direita sofre uma lesão evidente e as células imunológicas
+              reagem. Quando uma célula é danificada, incluindo as células da
+              pele, elas começam a liberar citocinas pró-inflamatórias. Estas
+              fomentam a liberação de prostaglandinas no local da lesão ou
+              infecção de tecidos. As prostaglandinas controlam o processo da
+              inflamação, entre outros.
+            </p>
 
-          <h1>2 - Células danificadas inflamadas/Fibras nervosas sensoriais</h1>
-          <p>
+          <h1 id="celdanif" onclick="show_respostas(this)">2 - Células danificadas inflamadas/Fibras nervosas sensoriais</h1>
+          <p class="respostas">
             Neurofibras sensoriais existem em todo o corpo e vão responder às
             prostaglandinas.
           </p>
 
-          <h1>3 - Neurônio de 1ª ordem</h1>
-          <p>
+          <h1 id="neur_prim" onclick="show_respostas(this)">3 - Neurônio de 1ª ordem</h1>
+          <p class="respostas">
             O neurônio de 1ª ordem leva sinal de perigo à medula espinhal para o
             corno dorsal.
           </p>
 
-          <h1>4 - Substância P</h1>
-          <p>
+          <h1 id="subst_p" onclick="show_respostas(this)">4 - Substância P</h1>
+          <p class="respostas">
             Um neuropeptídeo que age como neurotransmissor e neuromodulador. No
             processo da dor, a Substância P transmite sinais nociceptivos por
             meio de fibras aferentes primárias para neurônios de segunda ordem
             da coluna e do tronco cerebral.
           </p>
 
-          <h1>5 - Corno Dorsal</h1>
-          <p>
+          <h1 id="corno_dors" onclick="show_respostas(this)">5 - Corno Dorsal</h1>
+          <p class="respostas">
             A substância cinzenta está localizada na parte interna da medula
             espinhal. A medula espinhal é o primeiro local de retransmissão na
             transmissão de informações nociceptivas da periferia para o cérebro.
@@ -167,42 +189,43 @@
             espinhal.
           </p>
 
-          <h1>6 - Sinapse</h1>
-          <p>
+          <h1 id="sinaps" onclick="show_respostas(this)">6 - Sinapse</h1>
+          <p class="respostas">
             Dentro do Corno Dorsal, o neurônio de 1ª ordem faz sinapse e
             retransmite o sinal de perigo para o neurônio de 2ª ordem (8 precisa
             ser destacado).
           </p>
 
-          <h1>7 - Neurônio de 2ª ordem</h1>
-          <p>
+          <h1 id="neur_seg" onclick="show_respostas(this)">7 - Neurônio de 2ª ordem</h1>
+          <p class="respostas">
             Neurônio de 2ª ordem, cruza para o lado oposto e sobe pelo trato
             espinotalâmico, através do tronco encefálico e na direção do tálamo,
             no encéfalo.
           </p>
 
-          <h1>8 - Trato espinotalâmico</h1>
-          <p>Trato espinotalâmico para o tálamo (ver nociceptor doc)</p>
+          <h1 id="trat_espin" onclick="show_respostas(this)">8 - Trato espinotalâmico</h1>
+          <p class="respostas">Trato espinotalâmico para o tálamo (ver nociceptor doc)</p>
 
-          <h1>9 - Tronco cerebral</h1>
-          <p class="sem_padding_margin">
-            Tronco cerebral composto de três componentes:
-          </p>
+          <h1 id="tronco_cere" onclick="show_respostas(this)">9 - Tronco cerebral</h1>
+          <div class="respostas">
+            <p class="sem_padding_margin">
+              Tronco cerebral composto de três componentes:
+            </p>
+            <ol>
+              <li>Mesencéfalo</li>
+              <li>Ponte</li>
+              <li>Medula</li>
+            </ol>
+          </div>
 
-          <ol>
-            <li>Mesencéfalo</li>
-            <li>Ponte</li>
-            <li>Medula</li>
-          </ol>
-
-          <h1>10 - Via Ascendente</h1>
-          <p>
+          <h1 id="via_asc" onclick="show_respostas(this)">10 - Via Ascendente</h1>
+          <p class="respostas">
             A via ascendente é responsável por transmitir sinais de dor para a
             dor, para o córtex somatossensorial a dor.
           </p>
 
-          <h1>11 - Via Descendente</h1>
-          <p>
+          <h1 id="via_desc" onclick="show_respostas(this)">11 - Via Descendente</h1>
+          <p class="respostas">
             A via descendente controla / inibe a via ascendente, modulando a dor
             antes de chegar a níveis superiores do Sistema Nervoso Central. Uma
             rede modulatória central da dor inclui o giro cingulado, cinza
@@ -212,24 +235,24 @@
             dopamina como seus neurotransmissores primários.
           </p>
 
-          <h1>12 - Tálamo</h1>
-          <p>
+          <h1 id="talamo_" onclick="show_respostas(this)">12 - Tálamo</h1>
+          <p class="respostas">
             No tálamo, o neurônio de 2ª ordem faz sinapse com o neurônio de 3ª
             ordem.
           </p>
 
-          <h1>13 - Neurônio de 3ª ordem</h1>
-          <p>
+          <h1 id="neur_terc" onclick="show_respostas(this)">13 - Neurônio de 3ª ordem</h1>
+          <p class="respostas">
             O neurônio de 3ª ordem carrega o sinal de ameaça e a retransmite
             para a região do cérebro que se correlaciona com a MÃO DIREITA
             lesionada.
           </p>
 
-          <h1>14 - Percepção da Dor</h1>
-          <p>Sensação no lado oposto do cérebro onde o estímulo ocorreu</p>
+          <h1 id="percep" onclick="show_respostas(this)">14 - Percepção da Dor</h1>
+          <p class="respostas">Sensação no lado oposto do cérebro onde o estímulo ocorreu</p>
 
-          <h1>15 - Córtex Cerebral</h1>
-          <p>
+          <h1 id="cortex" onclick="show_respostas(this)">15 - Córtex Cerebral</h1>
+          <p class="respostas">
             O córtex cerebral é onde a percepção da dor é percebida. Os estudos
             de imagens cerebrais revisados ​​aqui indicam o substrato cortical e
             sub-cortical que sustenta a percepção da dor. Em vez de localizar um
@@ -239,8 +262,8 @@
             múltiplas vias nociceptivas.
           </p>
 
-          <h1>16 - Neurotrans 5HT/NA</h1>
-          <p>
+          <h1 id="neurotrans" onclick="show_respostas(this)">16 - Neurotrans 5HT/NA</h1>
+          <p class="respostas">
             Neurotransmissores influenciam a modulação facilitadora ou inibidora
             da transmissão do impulso doloroso a nível da medula espinhal. Os
             mais importantes no sistema descendente são a serotonina (5-HT),
@@ -255,37 +278,41 @@
 
           <br />
 
-          <h1>3 - Neurônio de 1ª Ordem</h1>
-          <p>
+          <hr />
+
+          <h1 id='neur_ter_zoom' onclick="show_respostas(this)">3 - Neurônio de 1ª Ordem</h1>
+          <p class="respostas">
             O Núcleo Supraótico (NSO) traz um Action Potencial (AP) e estimula
             vesículas a liberar conteúdo (Substância P).
           </p>
 
-          <h1>4 - Substância P (igual a 18 anterior)</h1>
-          <p>
+          <h1 id="subs_p_zoom" onclick="show_respostas(this)">4 - Substância P (igual a 18 anterior)</h1>
+          <p class="respostas">
             A Substância P estimula o Núcleo Supraótico (NSO) e propaga o
             impulso até o tálamo.
           </p>
 
-          <h1>17 - Interneurônio</h1>
-          <p>
+          <h1 id="inter" onclick="show_respostas(this)">17 - Interneurônio</h1>
+          <p class="respostas">
             A liberação da Substância P estimula um pequeno interneurônio, que
             libera um opioide endógeno chamado encefalina.
           </p>
 
-          <h1>18 - Encefalinas</h1>
-          <p class="sem_padding_margin">
-            As encefalinas são chamadas de ligantes endógenos, pois são
-            derivadas internamente e se ligam aos receptores opióides do corpo.
-            Elas tem importante papel ao regular a nocicepção no corpo:
-          </p>
-          <ol type="a">
-            <li>Inibindo a liberação da substância P.</li>
-            <li>
-              Inibindo a despolarização do neurônio pós-sináptico, detendo a
-              sinalização para o tálamo.
-            </li>
-          </ol>
+          <h1 id="encef" onclick="show_respostas(this)">18 - Encefalinas</h1>
+          <div class="respostas">
+            <p class="sem_padding_margin">
+              As encefalinas são chamadas de ligantes endógenos, pois são
+              derivadas internamente e se ligam aos receptores opióides do corpo.
+              Elas tem importante papel ao regular a nocicepção no corpo:
+            </p>
+            <ol type="a">
+              <li>Inibindo a liberação da substância P.</li>
+              <li>
+                Inibindo a despolarização do neurônio pós-sináptico, detendo a
+                sinalização para o tálamo.
+              </li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
