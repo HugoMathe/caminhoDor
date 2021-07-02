@@ -188,7 +188,7 @@ ol{
   margin-left: 4vh;
 }
 
-.overlay {
+.overlay1 {
   display: block;
   background-color: black;
   /* background-color: fuchsia; */
@@ -200,11 +200,29 @@ ol{
   position: absolute;
   z-index: 2;
 }
-
+.overlay {
+  display: block;
+  background-color: green;
+  /* background-color: fuchsia; */
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  width: 7vh;
+  height: 3vh;
+  position: absolute;
+  z-index: 2;
+}
+#opcao_1a {
+  margin-left: 4.5%;
+  top: 44.2%;
+  width: 15vh;
+  height: 4vh;
+  left: 0%;
+}
 #opcao_1 {
   top: 44.2%;
   width: 15vh;
-  height: 2vh;
+  height: 3.5%;
   left: 0%;
 }
 
