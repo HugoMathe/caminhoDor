@@ -227,8 +227,9 @@ verificador = (valor, correto, id_texto, id_select) => {
     document.getElementById(id_select).style.color = "#BFBFBF";
     document.getElementById(id_select).disabled = "true";
     let opcao_id_img = "opcao_" + correto;
+    let aopcao_id_img = "opcao_" + correto+"a";
     acertos.push(correto);
-    acerto(opcao_id_img);
+    acerto(opcao_id_img,aopcao_id_img);
   } else {
     document.getElementById(id_texto).style.color = "#fe0000";
     document.getElementById(id_select).style.color = "#fe0000";
@@ -237,8 +238,8 @@ verificador = (valor, correto, id_texto, id_select) => {
   console.log(id_texto, id_select, valor, correto);
 };
 
-acerto = (opcao_id_img) => {
-  tela_home();
+acerto = (opcao_id_img,aopcao_id_img) => {
+ 
 
   document.getElementById("acerto_alert").style.borderColor = "#01ea77";
   document.getElementById("acerto_alert").innerHTML =
@@ -253,7 +254,11 @@ acerto = (opcao_id_img) => {
   }, 1000);
 
   console.log(opcao_id_img);
-
+  setTimeout(() => {
+    let aopcao = document.getElementById(aopcao_id_img);
+    aopcao.style.animationName = "mudar";
+    },10000);
+  tela_home();
   setTimeout(() => {
     if (
       opcao_id_img == "opcao_2" ||
